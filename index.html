@@ -3,27 +3,325 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Corey's homelab: hands-on learning in networking,
+                 self-hosted infrastructure, virtualization, and local AI.">
   <title>Corey's Homelab</title>
+
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 800px;
-      margin: 80px auto;
-      padding: 0 24px;
-      background: #101827;
-      color: #e8edf5;
-      line-height: 1.7;
+    /* Colors and page-wide defaults */
+    :root {
+      color-scheme: dark;
+      --background: #101827;
+      --text: #e8edf5;
+      --muted: #b5c1d2;
+      --accent: #70d6cb;
+      --border: #334155;
     }
-    h1 { color: #70d6cb; }
-    p { font-size: 1.1rem; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.75;
+    }
+
+    .container {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 5px;
+    }
+
+    a:hover {
+      color: white;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    /* Header and introduction */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+    }
+
+    .site-name {
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 0;
+    }
+
+    .intro {
+      padding: 80px 0 64px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-family: Consolas, monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      letter-spacing: -0.045em;
+      margin: 16px 0 24px;
+    }
+
+    .intro-text {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.25rem;
+    }
+
+    /* Main sections */
+    section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 24px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 0 0 24px;
+      letter-spacing: -0.025em;
+    }
+
+    .story {
+      max-width: 740px;
+    }
+
+    p {
+      margin: 0 0 20px;
+    }
+
+    /* Rack photo and equipment descriptions */
+    .lab-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      gap: 48px;
+      margin-top: 32px;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    figcaption {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .machine {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .machine:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .position {
+      color: var(--accent);
+      font-family: Consolas, monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin: 8px 0 16px;
+    }
+
+    .machine p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding: 32px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Stack the photo and text on smaller screens */
+    @media (max-width: 760px) {
+      .intro {
+        padding: 48px 0;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      .lab-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <h1>Corey's Homelab</h1>
-  <p>Networking, self-hosted infrastructure, and automation.</p>
-  <p>
-    I'm building this portfolio to document my projects,
-    the problems I've solved, and what I'm learning along the way.
-  </p>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a class="site-name" href="#">Corey's Homelab</a>
+      <div class="nav-links">
+        <a href="#about">My story</a>
+        <a href="#lab">Inside the lab</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="intro">
+      <p class="eyebrow">Hardware curiosity. Hands-on learning.</p>
+      <h1>Corey's Homelab</h1>
+      <p class="intro-text">
+        A place to build, experiment, and learn about networking,
+        self-hosted infrastructure, and the hardware behind it.
+      </p>
+      <a href="#lab">Take a look inside the lab &rarr;</a>
+    </div>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="story">
+        <h2 id="about-title">How I got started</h2>
+
+        <p>
+          My fascination with computers started in 1995, when my dad
+          bought our first PC from Montgomery Ward. It was the coolest
+          thing I had ever seen. He was understandably nervous when
+          the first thing I wanted to do was slide the case cover off
+          and see what was inside.
+        </p>
+
+        <p>
+          I quickly became the family IT guy, although I suspect a
+          fair number of the "problems" I fixed were ones I had caused.
+          Luckily, I don't think they ever figured that out.
+        </p>
+
+        <p>
+          Today, I still have that same curiosity about PC hardware.
+          That's what drew me to homelabbing: it's the perfect mix
+          of hardware and software. I love building a PC and getting
+          it running, but a home network gives me something I can
+          keep working on. There's always another service to try,
+          a connection to troubleshoot, or something new to learn.
+        </p>
+      </div>
+    </section>
+
+    <section id="lab" aria-labelledby="lab-title">
+      <h2 id="lab-title">Inside the lab</h2>
+      <p>
+        Three HP EliteDesk machines handle dedicated roles in my lab,
+        supported by separate systems for AI and storage.
+      </p>
+
+      <div class="lab-layout">
+        <figure>
+          <img
+            src="homelab-rack.jpeg"
+            alt="My homelab rack with networking equipment,
+                 a patch panel, and three HP EliteDesk computers">
+          <figcaption>
+            My home setup. The three EliteDesks run AI control,
+            OPNsense, and Ubuntu Server, from top to bottom.
+          </figcaption>
+        </figure>
+
+        <div>
+          <article class="machine">
+            <span class="position">Top machine / AI control</span>
+            <h3>Hermes-Control</h3>
+            <p>
+              An HP EliteDesk 800 G3 runs my AI control setup.
+              It connects to Ubuntu-AI, a separate machine running
+              a local Qwen model. I also use OpenAI for harder tasks
+              when I'm comfortable sending the information to a cloud
+              service. This lets me experiment with local and cloud AI
+              while choosing which tasks stay on my own hardware.
+            </p>
+          </article>
+
+          <article class="machine">
+            <span class="position">Middle machine / Networking</span>
+            <h3>OPNsense</h3>
+            <p>
+              The middle EliteDesk runs OPNsense as my router and
+              firewall. It forms the foundation of my home network,
+              connecting the lab to the internet and managing traffic
+              between networks.
+            </p>
+          </article>
+
+          <article class="machine">
+            <span class="position">Bottom machine / Virtualization</span>
+            <h3>Ubuntu Server & Steam</h3>
+            <p>
+              The bottom EliteDesk runs Ubuntu Server and hosts a
+              Windows virtual machine that keeps my Steam library
+              updated. Using Steam's built-in local network transfers,
+              it serves game files to the other gaming PCs in my home
+              instead of each machine downloading them separately
+              from the internet.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    Corey's Homelab &middot; Built to learn, documented to share.
+  </footer>
 </body>
 </html>
