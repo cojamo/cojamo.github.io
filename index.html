@@ -215,6 +215,7 @@
       <div class="nav-links">
         <a href="#about">My story</a>
         <a href="#lab">Inside the lab</a>
+        <a href="#projects">Projects</a>
       </div>
     </nav>
   </header>
@@ -316,6 +317,72 @@
             </p>
           </article>
         </div>
+      </div>
+    </section>
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="story">
+        <h2 id="projects-title">Projects & lessons learned</h2>
+
+        <article>
+          <h3>Building a network I could experiment with</h3>
+
+          <p>
+            I started looking into OPNsense when I couldn't create
+            the VLAN setup I wanted with my TP-Link Deco mesh router.
+            I wanted more control over my lab network without
+            disrupting the internet connection my family depended on.
+          </p>
+
+          <p>
+            My solution was to put an OPNsense router behind the Deco.
+            That gave me a separate space to practice network
+            segmentation and try new configurations without having
+            my family yell at me every time I experimented.
+          </p>
+
+          <p>
+            I installed and configured OPNsense myself. It was much
+            more straightforward than I expected, and my first
+            thought afterward was that I should have done it sooner.
+            It gave me room to move beyond the limitations of my
+            existing setup and learn by doing.
+          </p>
+        </article>
+
+        <article>
+          <h3>A week troubleshooting the wrong problem</h3>
+
+          <p>
+            One of my most frustrating homelab experiences started
+            when I added an Aruba access point. I got it connected
+            and configured, but every device that joined would
+            disconnect within a minute or two.
+          </p>
+
+          <p>
+            I spent a week working through everything I could think
+            of. I watched YouTube videos, revisited the configuration,
+            and used my local AI to help troubleshoot. I was fairly
+            new to this, but I had decided the problem wasn't going
+            to beat me.
+          </p>
+
+          <p>
+            Eventually, I replaced the access point, and the
+            replacement worked flawlessly. Based on the symptoms
+            and my research, I suspected a faulty radio in the
+            original AP. I couldn't prove which component had
+            failed, but replacing the unit resolved the issue.
+          </p>
+
+          <p>
+            That experience taught me to include hardware failure
+            in my troubleshooting instead of assuming I had
+            configured something incorrectly.
+          </p>
+
+          <p>I still have nightmares about that AP.</p>
+        </article>
       </div>
     </section>
   </main>
