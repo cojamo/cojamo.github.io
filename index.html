@@ -73,7 +73,8 @@
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      flex-wrap: wrap;
+      gap: 8px 24px;
     }
 
     nav a {
@@ -215,6 +216,7 @@
       <div class="nav-links">
         <a href="#about">My story</a>
         <a href="#lab">Inside the lab</a>
+        <a href="#unraid">Unraid</a>        
         <a href="#projects">Projects</a>
       </div>
     </nav>
@@ -316,6 +318,64 @@
               from the internet.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+        <section id="unraid" aria-labelledby="unraid-title">
+      <h2 id="unraid-title">From spare gaming hardware to a home server</h2>
+
+      <div class="lab-layout">
+        <figure>
+          <img
+            src="unraid-server.jpeg"
+            loading="lazy"
+            alt="Inside my Unraid server, showing the CPU cooler,
+                 two graphics cards, and storage drives">
+          <figcaption>
+            Repurposed gaming hardware, now running my Unraid server.
+            Two GPUs handle separate AI and Immich workloads.
+          </figcaption>
+        </figure>
+
+        <div>
+          <p>
+            My Unraid journey started the way I suspect a lot of
+            homelabs do: I upgraded my gaming PC and had hardware
+            left over. In my case, that was an i9-9900K, 32 GB of
+            RAM, and an RTX 3080.
+          </p>
+
+          <p>
+            I had been watching Hardware Haven on YouTube and saw
+            Unraid being used for exactly the kinds of projects
+            I wanted to try. Other people chose TrueNAS, but
+            Unraid looked like a good fit for my first server,
+            so I gave it a shot.
+          </p>
+
+          <p>
+            It started small with Minecraft and Rust servers.
+            Today, it runs around 15 containers and a couple of
+            virtual machines. It also has two GPUs with separate
+            jobs: one runs a small language model for lighter AI
+            tasks, while the other handles machine learning
+            for Immich.
+          </p>
+
+          <p>
+            Immich is probably my favorite service. Having my photos
+            stored locally gives me more peace of mind, and it
+            makes the server useful for something beyond my
+            latest experiment.
+          </p>
+
+          <p>
+            Running Unraid has taught me the importance of
+            organizing files, understanding permissions, and
+            thinking carefully about how I protect my data.
+            Most importantly, it taught me a lesson worth
+            remembering: RAID is not a backup.
+          </p>
         </div>
       </div>
     </section>
